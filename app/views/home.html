@@ -1,0 +1,36 @@
+
+
+<slick autoplay="true" dots="true" speed="300" ng-if="home.slider">
+  <div ng-repeat="slides in home.slider"><img ng-src="{{slides.better_featured_image.source_url}}" alt="slider"/></div>
+</slick>
+
+
+<div class="about">
+  <div class="container">
+  <h3>About</h3>
+  <p class="text-justify" ng-bind-html="home.about">
+  </p>
+    <a ui-sref="main.about">View more</a>
+  </div>
+</div>
+
+<div class="service-provider">
+<div class="container">
+  <h3>Service Provider</h3>
+  <div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-6" ng-repeat="data in home.service_provider">
+      <div class="card">
+        <img class="card-img-top img-circle" ng-src="{{data.better_featured_image.media_details.sizes.thumbnail.source_url}}" alt="service_provider image">
+        <div class="card-block">
+          <h4 class="card-title">{{data.title.rendered}}</h4>
+          <p class="card-text" ng-bind-html="data.content.rendered"></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,56 @@
+<div class="container contact">
+  <div id="map"></div>
+  <div class="row">
+  <div class="col-md-4">
+    <h3>Get in touch</h3>
+    <p>
+      <strong>THE KARACHI SALON</strong>
+    </p>
+    <p>
+      Address: R-92, Sector 15/A-3,
+      North Karachi, Pakistan. <br/>
+      Phone: (0342)- 2894871 <br/>
+      Email: info@thekarachimensaloon.com
+    </p>
+  </div>
+  <div class="col-md-8">
+    <h3>Send us a Message</h3>
+   <form name="contactForm" ng-submit="contact.sendMail()" novalidate>
+     <div class="row">
+       <div class="col-md-4">
+         <input class="form-control" type="text" placeholder="Name *" ng-model="contact.message.name" required />
+       </div>
+       <div class="col-md-4">
+         <input class="form-control" type="email" placeholder="Email *" ng-model="contact.message.email" required />
+
+       </div>
+       <div class="col-md-4">
+         <input class="form-control" type="text" placeholder="Subject *" ng-model="contact.message.subject" required />
+       </div>
+     </div>
+    <div class="message">
+     <textarea class="form-control" placeholder="Message *" ng-model="contact.message.description" rows="6" required ></textarea>
+    </div>
+     <div class="text-right">
+       <button type="submit" class="btn btn-danger" ng-disabled="contactForm.$invalid">Send <span class="glyphicon glyphicon-send"></span></button>
+     </div>
+   </form>
+  </div>
+  </div>
+</div>
+<script>
+  function initMap() {
+    var position = {lat: 24.959282, lng: 67.065002};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: position
+    });
+    var marker = new google.maps.Marker({
+      position: position,
+      map: map
+    });
+  }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7nXgn_z4rzKTcXHWlP1jH18jVTDIgtwY&callback=initMap">
+</script>

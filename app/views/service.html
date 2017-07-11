@@ -1,0 +1,19 @@
+<div class="container services">
+  <h3>Packages</h3>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default" ng-repeat="package in service.packages">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#collapse{{$index}}">
+            <span>{{package.title.rendered}}</span> <span class="glyphicon glyphicon glyphicon-chevron-down"></span>
+          </a>
+        </h4>
+      </div>
+      <div id="collapse{{$index}}" class="panel-collapse collapse">
+        <div class="panel-body">
+        <ul ng-bind-html="package.content.rendered"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
