@@ -179,6 +179,28 @@ slick img{
   }
 }
 
-
-
+.slick-next:before{
+  font: normal normal normal 14px/1 FontAwesome;
+  content: "\f054";
+  font-size: 28px;
+  color: #e13845;
+}
+.slick-prev:before{
+  font: normal normal normal 14px/1 FontAwesome;
+  content: "\f053";
+  font-size: 28px;
+  color: #e13845;
+}
+.slick-dots li button:before{
+  content: '';
+}
+.slick-dots li button{
+  padding: 0;
+  width: 12px;
+  height: 5px;
+  background: #000;
+}
+.slick-dots .slick-active button{
+  background: #e13845 !important;
+}
 /* Responsive: Portrait tablets and up */
